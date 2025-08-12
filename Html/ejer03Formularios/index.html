@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ingreso Universidad - Formulario Completo</title>
+</head>
+<body>
+  <h1>Formulario de Ingreso a la Universidad</h1>
+
+  <form action="exito.html" method="get">
+
+    <h2>Datos personales</h2>
+    <label>
+      Nombre completo: <br />
+      <input type="text" name="nombre" />
+    </label><br /><br />
+
+    <label>
+      Edad: <br />
+      <input type="text" name="edad" />
+    </label><br /><br />
+
+    <label>
+      Dirección: <br />
+      <input type="text" name="direccion" />
+    </label><br /><br />
+
+    <label>
+      Sexo: <br />
+      <select name="sexo">
+        <option value="">Seleccione</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+        <option value="prefiere_no_decir">Prefiere no decir</option>
+      </select>
+    </label><br /><br />
+
+    <label>
+      Estado civil: <br />
+      <select name="estado_civil">
+        <option value="">Seleccione</option>
+        <option value="soltero">Soltero/a</option>
+        <option value="casado">Casado/a</option>
+        <option value="divorciado">Divorciado/a</option>
+        <option value="viudo">Viudo/a</option>
+      </select>
+    </label><br /><br />
+
+    <h2>Datos con validación</h2>
+
+    <label>
+      Email (requerido): <br />
+      <input type="email" name="email" required />
+    </label><br /><br />
+
+    <label>
+      DNI (número, requerido): <br />
+      <input type="number" name="dni" required />
+    </label><br /><br />
+
+    <label>
+      Fecha de nacimiento (requerido): <br />
+      <input type="date" name="fecha_nac" required />
+    </label><br /><br />
+
+    <label>
+      Teléfono (mínimo 8 dígitos, requerido): <br />
+      <input type="tel" name="telefono" pattern="[0-9]{8,}" required />
+    </label><br /><br />
+
+    <label>
+      Carrera a elegir (requerido): <br />
+      <select name="carrera" required>
+        <option value="">Seleccione una carrera</option>
+        <option value="ingenieria_sistemas">Ingeniería en Sistemas</option>
+        <option value="medicina">Medicina</option>
+        <option value="derecho">Derecho</option>
+        <option value="administracion">Administración</option>
+        <option value="psicologia">Psicología</option>
+      </select>
+    </label><br /><br />
+
+    <label>
+      ¿Tiene título secundario? (requerido): <br />
+      <input type="radio" id="titulo_si" name="titulo_secundario" value="si" required />
+      <label for="titulo_si">Sí</label>
+      <input type="radio" id="titulo_no" name="titulo_secundario" value="no" />
+      <label for="titulo_no">No</label>
+    </label><br /><br />
+
+    <button type="submit">Enviar formulario</button>
+  </form>
+</body>
+</html>
+
