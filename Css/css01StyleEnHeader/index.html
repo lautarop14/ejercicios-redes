@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Declaraciones en bloque entre etiquetas style</title>
+    <style>
+        h1 {
+            font-size: 2em;
+            color: yellow;
+            text-align:center;
+            background-color: blue;
+        }
+
+        p {
+            text-align: left;
+            font-size: 1em;
+            color: black;
+            text-align: center;
+            font-style: italic;
+            border-top: 2px solid blue;
+            border-bottom: 2px solid blue;
+        }
+
+        pre {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Declaraciones en bloque definidas entre etiquetas style</h1>
+
+    <pre>
+h1 {
+    font-size: 2em;
+    color: yellow;
+    text-align: center;
+    background-color: blue;
+}
+
+    </pre>
+
+    <h1>Todos los textos con etiquetas h1 tienen este estilo.</h1>
+    <h1>La etiqueta h1 lleva texto en color amarillo.</h1>
+    <h1>El background de un h1 lleva color azul (como bokita)</h1>
+    <h1>El estilo definido para la etiqueta h1 indica que el texto irá centrado (text-align).</h1>
+
+    <pre>
+        p {
+            text-align: center;
+            font-size: 1em;
+            color: blue;
+            font-style: italic;
+            border-top: 1px solid blue;
+            border-bottom: 1px solid blue;
+        }
+        
+    </pre>
+
+    <p>Todos los textos con etiqueta p tienen este estilo definido dentro de la etiqueta style.</p>
+    <p>Para los párrafos se definió un estilo con estas características: alineación a la izquierda.</p>
+    <p>Tamaño de letra de la misma medida que la definida para el contenedor body.</p>
+    <p>Color de letra negra.</p>
+    <p>Estilo de la fuente itálico.</p>
+    <p>Borde superior e inferior sólido, de 2px y de color azul.</p>
+
+</body>
+</html>
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Contenedores Relativos</title>
+  <style>
+    body {
+      background-color: #e9fafd;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin: 10px;
+      text-align: center;
+    }
+
+    .contenedor {
+      margin: 20px;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+    }
+
+    .caja1 {
+      background: blue;
+      color: white;
+      height: 50px;
+      margin-bottom: 10px;
+      padding: 30px;
+    }
+
+    .caja2 {
+      background: yellow;
+      color: black;
+      width: 400px;
+      padding: 10px;
+      position: relative;
+      left: 50px;
+      top: -10px;
+    }
+
+    .caja3 {
+      background: rgba(0, 0, 0, 0.6);
+      color: blue;
+      width: 500px;
+      height: 250px;
+      position: fixed;
+      left: 25%;
+      top: 20%;
+      overflow-y: auto;
+      opacity: 0.5;
+      z-index: 10;
+    }
+
+    .caja3 .modal {
+      background: rgba(255, 255, 255, 0.626);
+      margin: 5px 0;
+      padding: 5px;
+      
+    }
+
+    .caja4 {
+      background: blue;
+      color: white;
+      padding: 15px;
+      position: relative;
+      top: -20px;
+      left: 80px;
+      width: 350px;
+    }
+
+    .caja5 img {
+      width: 500px;
+      height: auto;
+    }
+    
+
+</style>
+</head>
+<body>
+  <h1>Contenedores relativos.</h1>
+
+  <div class="contenedor caja1">
+    Contenedor relativo clase1
+  </div>
+
+  <div class="contenedor caja1">
+    Contenedor relativo clase1
+  </div>
+
+  <div class="contenedor caja2">
+    Contenedor relativo clase2
+  </div>
+
+  <div class="contenedor caja3">
+    <div class="modal">Contenedor Modal</div>
+    <div class="modal">Contenedor Modal</div>
+    <div class="modal">Contenedor Modal</div>
+    <div class="modal">Contenedor Modal</div>
+    <div class="modal">Contenedor Modal</div>
+  </div>
+
+  <div class="contenedor caja4">
+    Contenedor relativo clase3 <br>
+    texto texto texto texto <br>
+    texto texto texto texto
+  </div>
+ 
+  <div class="contenedor caja5"> 
+    <img src="a6d21cb0df1d6dd5cf1667bf11218a08a108b619.jpg">
+  </div>
+
+</body>
+</html>

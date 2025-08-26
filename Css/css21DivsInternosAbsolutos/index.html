@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+  <title>Contenedores Absolutos</title>
+  <style>
+    body {
+      background-color: rgb(53, 78, 222);
+      font-family: Arial, sans-serif;
+      height: 100%;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .contenedor-principal {
+      position: relative;   
+      height: 600px;
+      margin: 30px auto;
+      background: #ffb92c;
+      border: 2px solid #333;
+    }
+
+    .interno1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 300px;
+      height: 200px;
+      background: rgb(53, 78, 222);
+      padding: 10px;
+    }
+
+    .interno2 {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      width: 250px;
+      height: 150px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .interno3 {
+      position: absolute;
+      top: 150px;
+      left: 180px;
+      width: 400px;
+      height: 250px;
+      background: rgba(0, 0, 0, 0.5); /* transparente */
+      color: white;
+      padding: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Contenedores Absolutos</h1>
+
+  <div class="contenedor-principal">
+    <div class="interno1">
+      <strong>Contenedor interno 1</strong><br>
+      dfasfasfdasafsa
+    </div>
+
+    <div class="interno2">
+    </div>
+
+    <div class="interno3">
+      <strong>Contenedor interno 3 (transparente)</strong><br>
+      El posicionamiento absoluto se trata de posicionar elementos html de manera absoluta respecto a su elemento contenedor, tomando como origen de coordenadas
+la esquina superior izquierda del mismo. En el ejercicio se pretende obtener una vista del documento sin barras de scroll de ningún tipo.
+Todo elemento con posicionamiento absoluto tiene su ubicación (Xi,Yi) respecto al origen de coordenadas de su contenedor.
+    </div>
+  </div>
+</body>
+</html>

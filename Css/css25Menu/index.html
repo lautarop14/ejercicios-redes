@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+  <title>Menú Desplegable</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f09832;
+      display: flex; /*para que el menú se muestre en fila*/
+    }
+
+    ul.menu > li {
+      position: relative;
+    }
+
+    ul.menu > li > a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+    }
+
+    ul.menu > li > a:hover {
+      background-color: #1a365c;
+    }
+
+    ul.menu li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #2a4d7d;
+      min-width: 180px;
+    }
+
+    ul.menu li ul li a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    ul.menu li ul li a:hover {
+      background-color: #1a365c;
+    } /*muestra cuando el mousse esta por arriba de una opción*/
+
+    ul.menu li:hover ul {
+      display: block;
+    } /*muestra la lista de opciones de cada tema*/
+
+  </style>
+</head>
+<body>
+
+  <ul class="menu">
+    <li>
+        <a href="../../Html/index.html">HTML</a>
+        <ul>
+            <li><a href="../../Html/ejer01PreguntasHTTP/">Preguntas HTTP</a></li>
+            <li><a href="../../Html/ejer02Tablas/">Tablas</a></li>
+            <li><a href="../../Html/ejer03Formularios/">Formularios</a></li>
+            <li><a href="../../Html/ejer04frames/">Frames</a></li>
+        </ul>
+    </li>    
+        
+    <li>
+      <a href="css/index.html">CSS</a>
+      <ul>
+        <li><a href="../css01StyleEnHeader/">Style en el header</a></li>
+        <li><a href="../css02SelectoresDeClase/">Selector de clase</a></li>
+        <li><a href="../css03StyleEnFile/">Style en file</a></li>
+      </ul>
+    </li>
+    <li><a href="jscript/index.html">JSCRIPT</a></li>
+    <li><a href="especiales/index.html">ESPECIALES</a></li>
+    <li><a href="php/index.html">PHP</a></li>
+  </ul>
+
+</body>
+</html>

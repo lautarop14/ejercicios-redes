@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+  <title>Formulario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      background: #000000;
+      color: rgb(236, 236, 236);
+      padding: 10px;
+      margin: 0;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      padding: 10px;
+      background: #d9d9d9;
+    }
+
+    .campo {
+      border: 1px solid gray;
+      padding: 8px;
+      background: #e0e0e0;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .acciones {
+      grid-column: span 2;
+      text-align: center;
+      padding: 15px;
+      background: #bfbfbf;
+    }
+
+    .pie {
+      grid-column: span 4;
+      text-align: center;
+      background: #000000;
+      color: white;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulario</h2>
+
+  <form>
+    <div class="campo">
+      <label>1 Apellido:</label>
+      <input type="text" placeholder="Ingrese apellido">
+    </div>
+    <div class="campo">
+      <label>2 Nombres:</label>
+      <input type="text" placeholder="Ingrese nombres">
+    </div>
+    <div class="campo">
+      <label>3 Contraseña:</label>
+      <input type="password">
+    </div>
+    <div class="campo">
+      <label>4 Campo deshabilitado:</label>
+      <input type="text" value="valor deshabilitado" disabled>
+    </div>
+    <div class="campo">
+      <label>5 Fecha:</label>
+      <input type="date">
+    </div>
+    <div class="campo">
+      <label>6 DNI:</label>
+      <input type="text">
+    </div>
+    <div class="campo">
+      <label>7 Actividades extracurriculares:</label>
+      <input type="checkbox"> Música <br>
+      <input type="checkbox"> Pintura artística
+    </div>
+    <div class="campo">
+      <label>8 Sexo:</label>
+      <input type="radio" name="sexo"> Masculino <br>
+      <input type="radio" name="sexo"> Femenino
+    </div>
+    <div class="campo">
+      <label>9 Vacío</label>
+    </div>
+    <div class="campo">
+      <label>10 Estudios cursados:</label>
+      <select>
+        <option>Primarios</option>
+        <option>Secundarios</option>
+        <option>Universitarios</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label>11 Área de desempeño:</label>
+      <select>
+        <option>Administración</option>
+        <option>Informática</option>
+        <option>Comercial</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label>12 Turno:</label>
+      <select>
+        <option>Mañana</option>
+        <option>Tarde</option>
+        <option>Noche</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label>13 Conduce:</label>
+      <input type="radio" name="conduce"> Sí
+      <input type="radio" name="conduce"> No
+    </div>
+
+    <div class="acciones">
+      <button type="submit">Enviar</button>
+    </div>
+    <div class="acciones">
+      <button type="reset">Reset</button>
+    </div>
+
+    <div class="pie">
+      Pie de formulario
+    </div>
+  </form>
+
+</body>
+</html>
