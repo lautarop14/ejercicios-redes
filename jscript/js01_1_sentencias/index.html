@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Sentencias en Javascript</title>
+</head>
+<body>
+    <h2>Texto 1, escrito directamente en HTML entre etiquetas h2</h2>
+    <h3>El navegador interpreta etiquetas HTML en primer lugar</h3>
+    
+    <script>
+        alert("Alerta escrita en 3erlugar. Este mensaje de alerta es escrito entre etiquetas script del documento.");
+        
+        document.write("<h3>Texto 2. Mensaje escrito desde JavaScript utilizando el método write(). </h3>");
+    </script>
+    
+    <script>    
+        document.write("<h3>Texto 4 escrito desde js con el método write() después del alert 2</h3>");
+        document.write("<h3>Texto 5. Otra escritura con método write() aplicado al documento.</h3>");
+        document.write("<p>El texto escrito con write no pisa al documento porque aún no terminó el flujo de escritura del navegador</p>");
+        document.write("<p>El flujo de escritura sobre el navegador termina un tiempo determinado después de la lectura de la última línea del documento y de haber cerrado todas las ventanas modales de tipo alert().</p>");
+        
+        alert("Alert. Escrito al final de todo el código. Esta ventana modal se ejecutará previo a las sentencias del segundo script");
+    </script>
+</body>
+</html>
