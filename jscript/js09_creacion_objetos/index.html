@@ -43,15 +43,15 @@
 <body>
 
     <div id="botones">
-        <button onclick="crear()">Crear</button>
-        <button onclick="limpiar()">Limpiar</button>
-        <button onclick="info()">Info</button>
+        <button id="boton-crear">Crear</button>
+        <button id="boton-limpiar">Limpiar</button>
+        <button id="boton-info">Info</button>
     </div>
 
     <div id="contenedor"></div>
 
     <script>
-        let contador = 0; // cuenta cuántos objetos se crearon
+        let contador = 0; 
         const contenedor = document.getElementById("contenedor");
 
         function crear() {
@@ -79,6 +79,11 @@
                 alert(`Índice: ${i}\nContenido: ${hijos[i].innerHTML}`);
             }
         }
+
+        document.getElementById("boton-crear").addEventListener("click", crear);
+        document.getElementById("boton-limpiar").addEventListener("click", limpiar);
+        document.getElementById("boton-info").addEventListener("click", info);
+
     </script>
 
 </body>

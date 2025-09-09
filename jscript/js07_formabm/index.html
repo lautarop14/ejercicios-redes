@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Formulario ABM</title>
     <style>
-        body { font-family: Arial, sans-serif; background:#eef; }
-        .contenedor { width: 400px; margin: 50px auto; padding: 20px; background:#bdf; border-radius:10px; }
+        body { font-family: Arial, sans-serif; background: blue; }
+        .contenedor { width: 400px; margin: 50px auto; padding: 20px; background: orange; border-radius:10px; }
         h2 { text-align:center; }
         input { margin: 5px 0; width: 100%; padding: 5px; }
         button { margin: 5px; padding: 5px 10px; }
@@ -14,63 +14,67 @@
 <body>
     <div class="contenedor">
         <h2>FORMULARIO ABM</h2>
+        
         <label>Apellido:</label>
-        <input type="text" id="apellido" onkeyup="validarFormulario()"><br>
+        <input type="text" id="apellido"><br>
         
         <label>Nombre:</label>
-        <input type="text" id="nombre" onkeyup="validarFormulario()"><br>
+        <input type="text" id="nombre"><br>
         
         <label>Saldo:</label>
-        <input type="number" id="saldo" onkeyup="validarFormulario()"><br>
+        <input type="number" id="saldo"><br>
 
-        <button id="blanquear" onclick="blanquear()" disabled>Blanquear</button>
-        <button id="alta" onclick="respuesta('alta')" disabled>Alta</button>
-        <button id="mod" onclick="respuesta('modificación')" disabled>Mod</button>
-        <button id="baja" onclick="respuesta('baja')" disabled>Baja</button>
+        <button id="blanquear" disabled>Blanquear</button>
+        <button id="alta" disabled>Alta</button>
+        <button id="mod" disabled>Mod</button>
+        <button id="baja" disabled>Baja</button>
     </div>
 
     <script>
+        // Referencias a los elementos (para no repetir document.getElementById muchas veces)
+        const apellido   = document.getElementById("apellido");
+        const nombre     = document.getElementById("nombre");
+        const saldo      = document.getElementById("saldo");
+
+        const blanquearBoton = document.getElementById("blanquear");
+        const altaBoton      = document.getElementById("alta");
+        const modBoton       = document.getElementById("mod");
+        const bajaBoton      = document.getElementById("baja");
+
         function validarFormulario() {
-            const apellido = document.getElementById("apellido").value.trim();
-            const nombre   = document.getElementById("nombre").value.trim();
-            const saldo    = document.getElementById("saldo").value.trim();
+            const ape = apellido.value;
+            const nom = nombre.value;
+            const sal = saldo.value;
 
-            const blanquearBtn = document.getElementById("blanquear");
-            const altaBtn      = document.getElementById("alta");
-            const modBtn       = document.getElementById("mod");
-            const bajaBtn      = document.getElementById("baja");
+            blanquearBoton.disabled = !(ape || nom || sal);
 
-            // Si hay al menos un dato → habilitar blanquear
-            if (apellido || nombre || saldo) {
-                blanquearBtn.disabled = false;
-            } else {
-                blanquearBtn.disabled = true;
-            }
-
-            // Si todos los campos están completos → habilitar todos
-            if (apellido && nombre && saldo) {
-                altaBtn.disabled = false;
-                modBtn.disabled = false;
-                bajaBtn.disabled = false;
-            } else {
-                altaBtn.disabled = true;
-                modBtn.disabled = true;
-                bajaBtn.disabled = true;
-            }
+            const completos = ape && nom && sal;
+            altaBoton.disabled = !completos;
+            modBoton.disabled  = !completos;
+            bajaBoton.disabled = !completos;
         }
 
         function blanquear() {
-            document.getElementById("apellido").value = "";
-            document.getElementById("nombre").value = "";
-            document.getElementById("saldo").value = "";
+            apellido.value = "";
+            nombre.value   = "";
+            saldo.value    = "";
             validarFormulario();
         }
 
         function respuesta(accion) {
-            // Abre otra pestaña con el mensaje correspondiente
             const nuevaVentana = window.open("", "_blank");
             nuevaVentana.document.write(`<h2>Respuesta a la ${accion}</h2>`);
         }
+
+        //Cada vez que se escribe algo en un input, validar
+        [apellido, nombre, saldo].forEach(input => {
+            input.addEventListener("keyup", validarFormulario);
+        });
+
+        blanquearBoton.addEventListener("click", blanquear);
+        altaBoton.addEventListener("click", () => respuesta("alta"));
+        modBoton.addEventListener("click", () => respuesta("modificación"));
+        bajaBoton.addEventListener("click", () => respuesta("baja"));
     </script>
 </body>
 </html>
