@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Traducción automática</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin-top: 100px;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="frase" ></div>
+        
+        <script>
+            //Objeto con traducciones
+            const traducciones = {
+                "es": "El show debe continuar",
+                "en": "The show must go on",
+                "fr": "Le spectacle doit continuer",
+                "pt": "O show deve continuar",
+            };
+
+            //Detectar idioma del navegador, let declara variable reasignable
+            let idioma = navigator.language;
+            idioma = idioma.substring(0,2);
+
+            const fraseTraducida = traducciones[idioma] || traducciones["en"];
+
+            document.getElementById("frase").textContent = fraseTraducida;
+        </script>
+    </body>
+</html>

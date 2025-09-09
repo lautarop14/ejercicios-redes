@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Creación de Objetos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf6e3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #botones {
+            margin-bottom: 15px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        #contenedor {
+            background-color: #fff8dc;
+            border: 1px solid #ccc;
+            padding: 15px;
+            min-height: 100px;
+            width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .objeto {
+            background-color: #add8e6;
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="botones">
+        <button onclick="crear()">Crear</button>
+        <button onclick="limpiar()">Limpiar</button>
+        <button onclick="info()">Info</button>
+    </div>
+
+    <div id="contenedor"></div>
+
+    <script>
+        let contador = 0; // cuenta cuántos objetos se crearon
+        const contenedor = document.getElementById("contenedor");
+
+        function crear() {
+            const nuevo = document.createElement("div");
+            nuevo.className = "objeto";
+            nuevo.innerHTML = `Elemento creado: ${contador}`;
+            contenedor.appendChild(nuevo);
+            contador++;
+        }
+
+        function limpiar() {
+            if (contenedor.lastChild) {
+                contenedor.removeChild(contenedor.lastChild);
+                contador--;
+            } else {
+                alert("No hay elementos para eliminar.");
+            }
+        }
+
+        function info() {
+            const hijos = contenedor.children;
+            alert("Cantidad de objetos: " + hijos.length);
+
+            for (let i = 0; i < hijos.length; i++) {
+                alert(`Índice: ${i}\nContenido: ${hijos[i].innerHTML}`);
+            }
+        }
+    </script>
+
+</body>
+</html>

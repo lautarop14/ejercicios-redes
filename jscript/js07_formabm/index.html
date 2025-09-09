@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario ABM</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#eef; }
+        .contenedor { width: 400px; margin: 50px auto; padding: 20px; background:#bdf; border-radius:10px; }
+        h2 { text-align:center; }
+        input { margin: 5px 0; width: 100%; padding: 5px; }
+        button { margin: 5px; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>FORMULARIO ABM</h2>
+        <label>Apellido:</label>
+        <input type="text" id="apellido" onkeyup="validarFormulario()"><br>
+        
+        <label>Nombre:</label>
+        <input type="text" id="nombre" onkeyup="validarFormulario()"><br>
+        
+        <label>Saldo:</label>
+        <input type="number" id="saldo" onkeyup="validarFormulario()"><br>
+
+        <button id="blanquear" onclick="blanquear()" disabled>Blanquear</button>
+        <button id="alta" onclick="respuesta('alta')" disabled>Alta</button>
+        <button id="mod" onclick="respuesta('modificación')" disabled>Mod</button>
+        <button id="baja" onclick="respuesta('baja')" disabled>Baja</button>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            const apellido = document.getElementById("apellido").value.trim();
+            const nombre   = document.getElementById("nombre").value.trim();
+            const saldo    = document.getElementById("saldo").value.trim();
+
+            const blanquearBtn = document.getElementById("blanquear");
+            const altaBtn      = document.getElementById("alta");
+            const modBtn       = document.getElementById("mod");
+            const bajaBtn      = document.getElementById("baja");
+
+            // Si hay al menos un dato → habilitar blanquear
+            if (apellido || nombre || saldo) {
+                blanquearBtn.disabled = false;
+            } else {
+                blanquearBtn.disabled = true;
+            }
+
+            // Si todos los campos están completos → habilitar todos
+            if (apellido && nombre && saldo) {
+                altaBtn.disabled = false;
+                modBtn.disabled = false;
+                bajaBtn.disabled = false;
+            } else {
+                altaBtn.disabled = true;
+                modBtn.disabled = true;
+                bajaBtn.disabled = true;
+            }
+        }
+
+        function blanquear() {
+            document.getElementById("apellido").value = "";
+            document.getElementById("nombre").value = "";
+            document.getElementById("saldo").value = "";
+            validarFormulario();
+        }
+
+        function respuesta(accion) {
+            // Abre otra pestaña con el mensaje correspondiente
+            const nuevaVentana = window.open("", "_blank");
+            nuevaVentana.document.write(`<h2>Respuesta a la ${accion}</h2>`);
+        }
+    </script>
+</body>
+</html>

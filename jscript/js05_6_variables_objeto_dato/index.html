@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Personas</title>
+</head>
+<body>
+  <h2>Datos de personas</h2>
+
+  <div>
+    <input id="nombre" placeholder="Nombre">
+    <input id="apellido" placeholder="Apellido">
+    <input id="fecha" type="date">
+  </div>
+
+  <div>
+    <button onclick="crearPersona()">Crear persona</button>
+    <button onclick="listarPersonas()">Listar personas</button>
+    <button onclick="document.getElementById('presentacion').style.display='none'">Ocultar</button>
+  </div>
+
+  <div id="presentacion" style="display:none;">
+    <table border="1">
+      <thead>
+        <tr><th>Nombre</th><th>Apellido</th><th>Fecha</th></tr>
+      </thead>
+      <tbody id="cuerpo"></tbody>
+    </table>
+    <p id="longitud"></p>
+  </div>
+
+  <script>
+    const personas = [];
+
+    function crearPersona() {
+      const nombre = nombreInput.value.trim();
+      const apellido = apellidoInput.value.trim();
+      const fecha = fechaInput.value;
+
+      if (!nombre || !apellido || !fecha) {
+        alert("Complete todos los campos.");
+        return;
+      }
+      personas.push({ nombre, apellido, fecha });
+      nombreInput.value = apellidoInput.value = fechaInput.value = "";
+    }
+
+    function listarPersonas() {
+      const cuerpo = document.getElementById("cuerpo");
+      cuerpo.innerHTML = personas.map(p =>
+        `<tr><td>${p.nombre}</td><td>${p.apellido}</td><td>${p.fecha}</td></tr>`
+      ).join("");
+      longitud.textContent = "Cantidad: " + personas.length;
+      presentacion.style.display = "block";
+    }
+
+    // Atajos a los inputs (para simplificar código)
+    const nombreInput = document.getElementById("nombre");
+    const apellidoInput = document.getElementById("apellido");
+    const fechaInput = document.getElementById("fecha");
+  </script>
+</body>
+</html>
+

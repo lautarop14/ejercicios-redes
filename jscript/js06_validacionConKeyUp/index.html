@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Validación con keyup</title>
+</head>
+<body>
+    <h2>Validación de un input de formulario en el evento de onKeyup</h2>
+
+    <div class="contenedor">
+        <label>Ingrese el día del mes:</label><br>
+        <input type="number" id="dia" onkeyup="validarDia()">
+        <p id="errorDia" class="error"></p>
+
+        <label>Ingrese el mes</label><br>
+        <input type="number" id="mes" onkeyup="validarMes()">
+        <p id="errorMes" class="error"></p>
+
+        <button onclick="enviarFormulario()">Enviar</button>
+        <button type="reset" onclick="resetFormulario()">Reset</button>
+    </div>
+
+    <script>
+        function validarDia() {
+            const dia = document.getElementById("dia").value;
+            const errorDia = document.getElementById("errorDia");
+            if (dia < 1 || dia > 31) {
+                errorDia.textContent = "Día inválido. Debe estar entre 1 y 31.";
+            } else {
+                errorDia.textContent = "";
+            }
+        }
+
+        function validarMes() {
+            const mes = document.getElementById("mes").value;
+            const errorMes = document.getElementById("errorMes");
+            if (mes < 1 || mes > 12) {
+                errorMes.textContent = "Mes inválido. Debe estar entre 1 y 12.";
+            } else {
+                errorMes.textContent = "";
+            }
+        }
+
+        function enviarFormulario() {
+            const dia = document.getElementById("dia").value;
+            const mes = document.getElementById("mes").value;
+
+            if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+                alert("Corrija los errores antes de enviar.");
+                return;
+            }
+
+            window.location.href = "confirmacion.html";
+        }
+
+        function resetFormulario() {
+            document.getElementById("dia").value = "";
+            document.getElementById("mes").value = "";
+            document.getElementById("errorDia").textContent = "";
+            document.getElementById("errorMes").textContent = "";
+        }
+    </script>
+</body>
