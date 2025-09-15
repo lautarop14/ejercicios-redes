@@ -1,0 +1,24 @@
+{
+
+"pedidos": [
+    { "CodCliente": 1, "Nro_pedido": 1001, "Plazo_entrega": "2025-09-20", "Condiciones_pago": { "codPago": 1, "detalle": "Contado" }, "Moneda": "ARS", "Total_Neto_del_comprobante": 25000.50, "Pdf_comprobante": "" },
+    { "CodCliente": 2, "Nro_pedido": 1002, "Plazo_entrega": "2025-09-22", "Condiciones_pago": { "codPago": 2, "detalle": "15 dias ff" }, "Moneda": "USD", "Total_Neto_del_comprobante": 1200.00, "Pdf_comprobante": "" },
+    { "CodCliente": 3, "Nro_pedido": 1003, "Plazo_entrega": "2025-09-25", "Condiciones_pago": { "codPago": 3, "detalle": "30 dias ff" }, "Moneda": "ARS", "Total_Neto_del_comprobante": 78000.75, "Pdf_comprobante": "" },
+    { "CodCliente": 4, "Nro_pedido": 1004, "Plazo_entrega": "2025-09-28", "Condiciones_pago": { "codPago": 1, "detalle": "Contado" }, "Moneda": "USD", "Total_Neto_del_comprobante": 3400.00, "Pdf_comprobante": "" },
+    { "CodCliente": 5, "Nro_pedido": 1005, "Plazo_entrega": "2025-09-30", "Condiciones_pago": { "codPago": 2, "detalle": "15 dias ff" }, "Moneda": "ARS", "Total_Neto_del_comprobante": 56000.00, "Pdf_comprobante": "" },
+    { "CodCliente": 6, "Nro_pedido": 1006, "Plazo_entrega": "2025-10-02", "Condiciones_pago": { "codPago": 3, "detalle": "30 dias ff" }, "Moneda": "USD", "Total_Neto_del_comprobante": 2500.00, "Pdf_comprobante": "" },
+    { "CodCliente": 7, "Nro_pedido": 1007, "Plazo_entrega": "2025-10-05", "Condiciones_pago": { "codPago": 1, "detalle": "Contado" }, "Moneda": "ARS", "Total_Neto_del_comprobante": 98000.99, "Pdf_comprobante": "" },
+    { "CodCliente": 8, "Nro_pedido": 1008, "Plazo_entrega": "2025-10-08", "Condiciones_pago": { "codPago": 2, "detalle": "15 dias ff" }, "Moneda": "USD", "Total_Neto_del_comprobante": 1750.45, "Pdf_comprobante": "" },
+    { "CodCliente": 9, "Nro_pedido": 1009, "Plazo_entrega": "2025-10-10", "Condiciones_pago": { "codPago": 3, "detalle": "30 dias ff" }, "Moneda": "ARS", "Total_Neto_del_comprobante": 44200.00, "Pdf_comprobante": "" },
+    { "CodCliente": 10, "Nro_pedido": 1010, "Plazo_entrega": "2025-10-12", "Condiciones_pago": { "codPago": 1, "detalle": "Contado" }, "Moneda": "USD", "Total_Neto_del_comprobante": 890.00, "Pdf_comprobante": "" }
+],
+
+"condicionesPago": [
+    {"codPago": 1, "detalle": "Contado" },
+    {"codPago": 2, "detalle": "15 días fijos"},
+    {"codPago": 3, "detalle": "30 días fijos"},
+    {"codPago": 4, "detalle": "Transferencia bancaria"},
+    {"codPago": 5, "detalle": "Tarjeta de crédito"}
+]
+
+}
