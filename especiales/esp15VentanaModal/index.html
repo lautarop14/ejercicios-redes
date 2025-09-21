@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modal con Formulario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="contenedorGlobal" class="contenedor oculto">
+        <h1>Esto es el div contenedor</h1>
+        <p>El contenedor se desactivará cuando se active la ventana modal.</p>
+        <p>
+            Desactivado:<br>
+            <code>pointer-events: none;</code><br>
+            <code>opacity: 0.3;</code><br>
+            Activado:<br>
+            <code>pointer-events: auto;</code><br>
+            <code>opacity: 1;</code>
+        </p>
+        <button id="abrirModal">Abre DIV modal</button>
+    </div>
+
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-contenido" role="dialog" aria-modal="true">
+        <div class="modal-header">
+            <span>Encabezado modal</span>
+            <button id="cerrarModal" class="cerrar" aria-label="Cerrar">✕</button>
+        </div>
+            <div class="modal-body">
+        <!-- Aquí cargamos el formulario en un iframe -->
+            <iframe id="modalIframe" src="" frameborder="0" title="Formulario"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
+
+
+

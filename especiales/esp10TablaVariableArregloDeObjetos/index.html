@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="table-container">
+    <div class="header">
+      <h2>Pedidos</h2>
+      <div>
+        <button id="btnCargar">Cargar datos</button>
+        <button id="btnVaciar">Vaciar datos</button>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 10%;">Cod Cliente</th>
+            <th style="width: 15%;">Nro Pedido</th>
+            <th style="width: 10%;">Plazo de entrega</th>
+            <th style="width: 30%;">Condiciones de pago</th>
+            <th style="width: 15%;">Moneda</th>
+            <th style="width: 20%;">Total neto del comprobante</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body">
+          <!-- filas dinámicas -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>sum codCliente</td>
+            <td>sum nroPedido</td>
+            <td>sum Plazo de entrega</td>
+            <td>sum Condiciones de pago</td>
+            <td>sum Moneda</td>
+            <td>sum Total neto del comprobante</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="footer">
+      Pie
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
