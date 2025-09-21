@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: lightblue;
+  background-color: #fffde7;
 }
+
 
 .contenedor-global {
   display: flex;
@@ -36,10 +37,13 @@ button:disabled {
 
 table {
   border-collapse: collapse;
-  width: 95%; 
-  max-width: 1200px;
+  width: 100%; 
+  height: 80vh;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  min-height: 450px;
+  background-color: lightblue;
 }
+
 thead {
   background-color: #f08080;
   font-weight: bold;
@@ -50,7 +54,7 @@ thead th {
 }
 tbody td {
   padding: 8px;
-  background-color: #b0c4de;
+  background-color: lightblue;
   text-align: center;
 }
 
